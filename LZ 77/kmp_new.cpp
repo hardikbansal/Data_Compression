@@ -63,8 +63,6 @@ int main(int argc, const char *argv[])
 		fi.seekg (0, fi.end);
 		length = fi.tellg();
 		fi.seekg (0, fi.beg);
-		//		cout<<length;
-//		length=min(length,100000);
 		fi.read (input,length);
 	}
 	ofstream fo;
@@ -74,24 +72,19 @@ int main(int argc, const char *argv[])
 	int i;
 	for(i=1;i<min(4096,len1);i++){
 		mat=kmp(input,i,input+i,min(100,(int)strlen(input+i)),&len2);
-		if(len2>=9){
+		if(len2>=7){
 			fo<<"{"<<i-mat<<","<<len2<<"}";
 			i+=len2-1;
 		} else fo<<input[i];
 	}
-//	cout<<input;
 	printf("%d",i);
 	for(;i<length;i++){
 		mat=kmp(input+i-4096,4096,input+i,min(100,(int)strlen(input+i)),&len2);
-		if(len2>=9){
+		if(len2>=7){
 			fo<<"{"<<4096-mat<<","<<len2<<"}";
 			i+=len2-1;
 		}else fo<<input[i];
 	}
 	fo.close(),fi.close();
-	/*
-	//	i = kmp(target, strlen(target), pattern, strlen(pattern));
-	//	if (i >= 0)
-	//		printf("matched @: %s\n", ch + i);*/
 	return 0;
 }

@@ -36,7 +36,6 @@ void make_tree(int num,char * a){
             }
     }
     temp->ch=(char)num;
-//    cout<<temp->ch<<endl;
 }
 int main(){
     int numi;
@@ -47,7 +46,6 @@ int main(){
     while(!fc.eof()){
         fc>>numi;
         fc>>ch;
-   //     cout<<numi<<" "<<ch<<endl;
         make_tree(numi,ch);
     }
     int length;
@@ -59,7 +57,6 @@ int main(){
 	node *temp=tree;
 	bool arr[8];
 	int ch2;
-	cout<<tree->ch;
 	for(int j=0;j<length;j++){
 		ch1=fi.get();
 		ch2=ch1;
@@ -68,11 +65,7 @@ int main(){
             arr[i]=ch2%2;
             ch2=ch2/2;
         }
-/*        for(int i=0;i<8;i++){
-            cout<<arr[i];
-        }
-*/        for(int i=0;i<8;i++){
- //           cout<<arr[i];
+	for(int i=0;i<8;i++){
             if(arr[i]==0){
                 if(temp->left!=NULL) temp=temp->left;
                 else{

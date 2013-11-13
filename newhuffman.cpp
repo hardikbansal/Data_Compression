@@ -104,7 +104,7 @@ void build_huffman_tree(){
 }
 int main(){
 	ofstream fo ("output.txt");
-	ifstream fi ("input.txt",ios::in|ios::binary|ios::ate);
+	ifstream fi ("input1.txt",ios::in|ios::binary|ios::ate);
 	int length;
 	if (fi) {
 		fi.seekg (0, fi.end);
@@ -131,7 +131,7 @@ int main(){
 	build_min_heap(heap_size);
 	build_huffman_tree();
 	print_codes(heap+1,0);
-	ifstream fn ("input.txt",ios::in|ios::binary|ios::ate);
+	ifstream fn ("input1.txt",ios::in|ios::binary|ios::ate);
 	if (fn) {
 		fn.seekg (0, fn.end);
 		length = fn.tellg();

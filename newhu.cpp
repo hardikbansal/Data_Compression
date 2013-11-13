@@ -107,7 +107,7 @@ void build_huffman_tree(){
 int main(){
 	ofstream fo ("output.txt");
 	ofstream fc ("output_code.txt");
-	ifstream fi ("input.txt",ios::in|ios::binary|ios::ate);
+	ifstream fi ("world95.txt",ios::in|ios::binary|ios::ate);
 	int length;
 	if (fi) {
 		fi.seekg (0, fi.end);
@@ -135,7 +135,7 @@ int main(){
 	build_min_heap(heap_size);
 	build_huffman_tree();
 	print_codes(heap+1,0,fc);
-	ifstream fn ("input.txt",ios::in|ios::binary|ios::ate);
+	ifstream fn ("world95.txt",ios::in|ios::binary|ios::ate);
 	if (fn) {
 		fn.seekg (0, fn.end);
 		length = fn.tellg();
@@ -148,7 +148,7 @@ int main(){
 		ch2=ch;
         if(ch<0) {ch2=ch+256;}
         for(int j=0;j<cnt[ch2];j++){
-                cout<<cnt[ch2];
+//                cout<<cnt[ch2];
             val=val*2+code[ch2][j];
             k++;
             if(k==8){
